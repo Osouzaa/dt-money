@@ -11,6 +11,19 @@ export const SummaryContainer = styled.section`
   gap: 2rem;
 
   margin-top: -5rem;
+
+  @media (max-width: 768px) {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      display: none; /* Esconde a barra de rolagem */
+    }
+  }
 `
 
 interface SummaryCardProps {
@@ -40,4 +53,18 @@ export const SummaryCard = styled.div<SummaryCardProps>`
     `
     background: ${props.theme['green-700']};
   `}
+
+  @media (max-width: 768px) {
+    min-width: 280px;
+  }
+`
+
+export const DateOfInput = styled.p`
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    color: ${(props) => props.theme['gray-500']};
+    font-size: .875rem;
+  }
 `

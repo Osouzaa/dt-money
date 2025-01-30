@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const SearchFormContainer = styled.form`
   display: flex;
+  flex-direction: column;
   gap: 1rem;
 
   input {
@@ -41,5 +42,35 @@ export const SearchFormContainer = styled.form`
       color: ${(props) => props.theme.white};
       transition: 0.2s all;
     }
+
+    @media (max-width: 768px) {
+        span {
+          display: none;
+        }
+      }
   }
+`
+
+export const TotalTransactionsContainer = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-size: 1.125rem;
+      color: ${(props) => props.theme['gray-300']};
+    }
+
+    span {
+      font-size: 1rem;
+      color: ${(props) => props.theme['gray-500']};
+    }
+}
+`
+
+export const ContainerInputSearch = styled.div`
+  display: flex;
+  gap: 0.5rem;
 `

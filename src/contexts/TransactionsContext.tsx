@@ -33,24 +33,25 @@ interface TransactionsProviderProps {
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([])
 
-  const createTransaction = useCallback(async (data: CreateTransactionInput) => {
-    const { title, amount, category, type } = data
-    const response = await api.post('/transactions', {
-      title,
-      category,
-      amount,
-      type,
-      createdAt: new Date(),
-    })
-    setTransactions((state) => [...state, response.data])
-  }, [])
+  const createTransaction = useCallback(
+    async (data: CreateTransactionInput) => {
+      const { title, amount, category, type } = data
+      const response = await api.post('/transactions', {
+        title,
+        category,
+        amount,
+        type,
+        createdAt: new Date(),
+      })
+      setTransactions((state) => [...state, response.data])
+    }, [])
 
   const fetchTransactions = useCallback(async (query?: string) => {
     const response = await api.get('/transactions', {
       params: {
         q: query,
         _sort: 'createdAt',
-        _order: 'desc',
+        _order: 'DESC',
       },
     })
     setTransactions(response.data)

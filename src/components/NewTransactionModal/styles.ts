@@ -8,6 +8,7 @@ export const Overlay = styled(Dialog.Overlay)`
   height: 100vh;
   inset: 0; /* top, right, bottom, left */
   background: rgba(0, 0, 0, 0.75);
+  
 `
 
 export const Content = styled(Dialog.Content)`
@@ -60,6 +61,18 @@ export const Content = styled(Dialog.Content)`
         cursor: not-allowed;
       }
     }
+  }
+
+  @media screen and (max-width: 768px) {
+    min-width: 100%;
+    width: 100%;
+    padding: 1.5rem;
+    
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 12px 12px 0 0; /* Arredonda só no topo */
   }
 `
 

@@ -1,36 +1,28 @@
 {
   "transactions": [
     {
-      "id": 1,
-      "title": "Cão",
-      "amount": 4000,
-      "type": "income",
-      "category": "Dev",
-      "createdAt": "2023-01-03 20:00:00"
-    },
-    {
-      "id": 2,
-      "title": "Dinossauro",
-      "amount": 4000,
-      "type": "outcome",
-      "category": "Dev",
-      "createdAt": "2023-01-05 20:00:00"
-    },
-    {
-      "title": "Analista de Desenvolvimento de  Sistemas",
-      "category": "123",
-      "amount": 1,
+      "title": "Desenvolvimento de Site",
+      "category": "Venda",
+      "amount": 12000,
       "type": "income",
       "createdAt": "2025-01-29T00:44:21.492Z",
       "id": 3
     },
     {
-      "title": "Analista de Desenvolvimento de  Sistemas",
-      "category": "123",
-      "amount": 1000,
-      "type": "income",
+      "title": "Hamburguer",
+      "category": "Alimentação",
+      "amount": 59,
+      "type": "outcome",
       "createdAt": "2025-01-29T12:40:32.253Z",
       "id": 4
+    },
+    {
+      "title": "Fatura Cartão de Credtiro",
+      "category": "Cartão",
+      "amount": 2000,
+      "type": "outcome",
+      "createdAt": "2025-01-30T13:41:35.774Z",
+      "id": 5
     }
   ]
 }
