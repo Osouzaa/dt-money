@@ -21,10 +21,12 @@ export function Summary() {
           <ArrowCircleUp size={32} color="#00b37e" />
         </header>
         <strong>{priceFormatter.format(summary.income)}</strong>
-        <DateOfInput>Última entrada em {
-        formatDate(summary.lastIncomeDate)
-}
-        </DateOfInput>
+        {summary.lastIncomeDate && (
+          <DateOfInput>Última entrada em {
+            formatDate(summary.lastIncomeDate)
+    }
+          </DateOfInput>
+        )}
       </SummaryCard>
 
       <SummaryCard>
@@ -33,10 +35,12 @@ export function Summary() {
           <ArrowCircleDown size={32} color="#f75a68" />
         </header>
         <strong>{priceFormatter.format(summary.outcome)}</strong>
-        <DateOfInput>Última saída em {
-        formatDate(summary.lastOutcomeDate)
-}
-        </DateOfInput>
+        {summary.lastOutcomeDate && (
+          <DateOfInput>Última saída em {
+            formatDate(summary.lastOutcomeDate)
+    }
+          </DateOfInput>
+        )}
       </SummaryCard>
 
       <SummaryCard variant="green">
@@ -45,11 +49,13 @@ export function Summary() {
           <CurrencyDollar size={32} color="#fff" />
         </header>
         <strong>{priceFormatter.format(summary.total)}</strong>
-        <DateOfInput>
-          De {formatDate(
-          summary.firstTransactionDate)}
-          até {formatDate(summary.lastTransactionDate)}
-        </DateOfInput>
+        {summary.firstTransactionDate && (
+          <DateOfInput>
+            De {formatDate(
+            summary.firstTransactionDate)}
+            até {formatDate(summary.lastTransactionDate)}
+          </DateOfInput>
+        )}
       </SummaryCard>
     </SummaryContainer>
   )
